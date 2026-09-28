@@ -7,121 +7,22 @@
 
   <title>Ayesha & Hamza | Wedding Invitation</title>
 
-  <!-- GOOGLE FONTS -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-
-  <!-- URDU FONT OVERRIDE -->
-  <style>
-    /*
-      Urdu / Nastaliq text
-      This overrides the old Arabic/Urdu font wherever .urdu is used.
-    */
-
-    .urdu {
-      font-family: "Noto Nastaliq Urdu", serif !important;
-      direction: rtl;
-      unicode-bidi: isolate;
-      line-height: 2.2;
-      font-weight: 500;
-    }
-
-    .names-urdu {
-      font-family: "Noto Nastaliq Urdu", serif !important;
-      direction: rtl;
-      unicode-bidi: isolate;
-      line-height: 2;
-      font-weight: 600;
-    }
-
-    .urdu-big {
-      font-family: "Noto Nastaliq Urdu", serif !important;
-      direction: rtl;
-      unicode-bidi: isolate;
-      line-height: 2.3;
-      font-weight: 500;
-    }
-
-    .urdu-button {
-      font-family: "Noto Nastaliq Urdu", serif !important;
-      direction: rtl;
-      line-height: 1.8;
-    }
-
-    /*
-      Quranic Arabic remains in Amiri because Noto Nastaliq Urdu
-      is intended for Urdu Nastaliq text.
-    */
-    .quran-arabic {
-      font-family: "Amiri", serif !important;
-      direction: rtl;
-      unicode-bidi: isolate;
-      line-height: 2;
-    }
-
-    #loader .urdu {
-      font-size: 1.35rem;
-      margin-bottom: 8px;
-    }
-
-    .names-urdu {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      margin-top: 8px;
-      margin-bottom: 12px;
-    }
-
-    .person-card .urdu {
-      font-size: 1.25rem;
-      margin-top: 2px;
-      margin-bottom: 10px;
-    }
-
-    .event-card .urdu {
-      font-size: 1.2rem;
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-
-    .dua-card .urdu-big {
-      font-size: clamp(1.5rem, 4vw, 2.25rem);
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    footer .urdu-big {
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      margin-bottom: 15px;
-    }
-
-    /*
-      When JavaScript changes the invitation paragraph to Urdu,
-      this class can be added automatically.
-    */
-    .language-text.urdu-mode {
-      font-family: "Noto Nastaliq Urdu", serif !important;
-      direction: rtl;
-      text-align: center;
-      line-height: 2.4;
-      font-size: 1.25rem;
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- LOADING SCREEN -->
+  <!-- LOADER -->
   <div id="loader" class="loader">
     <div class="loader-flower">❀</div>
 
-    <p class="urdu" lang="ur">
+    <p class="urdu" lang="ur" dir="rtl">
       بسم اللہ الرحمن الرحیم
     </p>
 
@@ -129,32 +30,25 @@
   </div>
 
 
-  <!-- FALLING PETALS -->
+  <!-- PETALS -->
   <div id="petals"></div>
 
 
   <!-- MUSIC BUTTON -->
-  <button
-    id="musicBtn"
-    class="music-btn"
-    aria-label="Toggle music"
-  >
+  <button id="musicBtn" class="music-btn" aria-label="Toggle music">
     ♫
   </button>
 
 
-  <!-- MAIN INVITATION -->
   <main id="invitation" class="hidden">
 
 
-    <!-- ==========================================
-         HERO
-    =========================================== -->
+    <!-- HERO -->
     <section class="hero" id="home">
 
       <div class="ornament top">✦</div>
 
-      <p class="urdu small" lang="ur">
+      <p class="urdu small" lang="ur" dir="rtl">
         بسم اللہ الرحمن الرحیم
       </p>
 
@@ -170,8 +64,8 @@
       </div>
 
 
-      <p class="names-urdu" lang="ur">
-        عائشہ &amp; حمزہ
+      <p class="urdu names-urdu" lang="ur" dir="rtl">
+        عائشہ & حمزہ
       </p>
 
 
@@ -179,101 +73,78 @@
 
 
       <p class="intro">
-        Request the pleasure of your company
-        <br>
+        Request the pleasure of your company<br>
         as they begin a beautiful new chapter together.
       </p>
 
 
       <button id="openBtn" class="gold-btn">
-        Open Invitation
-        <span>↗</span>
+        Open Invitation <span>↗</span>
       </button>
 
 
       <div class="scroll-hint">
-        SCROLL TO DISCOVER
-        <span>↓</span>
+        SCROLL TO DISCOVER <span>↓</span>
       </div>
 
     </section>
 
 
 
-    <!-- ==========================================
-         WELCOME
-    =========================================== -->
+    <!-- WELCOME -->
     <section class="welcome reveal">
 
-      <div class="section-mark">
-        01
-      </div>
+      <div class="section-mark">01</div>
 
       <p class="eyebrow">
-        WITH LOVE &amp; DUAS
+        WITH LOVE & DUAS
       </p>
 
 
       <h2>
-        A new chapter,
-        <br>
+        A new chapter,<br>
         <i>one beautiful beginning.</i>
       </h2>
 
 
-      <!-- Quranic Arabic kept in Amiri -->
-      <p class="quran-arabic quote" lang="ar">
+      <!-- Quranic Arabic stays in Amiri -->
+      <p class="quran-arabic quote" lang="ar" dir="rtl">
         وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
       </p>
 
 
       <p class="translation">
         “And among His signs is that He created for you spouses
-        from among yourselves so that you may find tranquility
-        in them.”
+        from among yourselves so that you may find tranquility in them.”
       </p>
 
 
       <div class="switch">
 
-        <button
-          class="lang active"
-          data-lang="en"
-        >
+        <button class="lang active" data-lang="en">
           English
         </button>
 
-        <button
-          class="lang urdu-button"
-          data-lang="ur"
-          lang="ur"
-        >
+        <button class="lang urdu-button" data-lang="ur" lang="ur">
           اردو
         </button>
 
       </div>
 
 
-      <p
-        id="languageText"
-        class="language-text"
-      >
-        With the blessings of our families, we invite you to
-        share in the joy of our wedding celebrations.
+      <p id="languageText" class="language-text">
+        With the blessings of our families, we invite you to share
+        in the joy of our wedding celebrations.
       </p>
 
     </section>
 
 
 
-    <!-- ==========================================
-         THE COUPLE
-    =========================================== -->
+    <!-- COUPLE -->
     <section class="couple reveal">
 
-      <div class="section-mark">
-        02
-      </div>
+      <div class="section-mark">02</div>
 
       <p class="eyebrow">
         THE COUPLE
@@ -281,8 +152,7 @@
 
 
       <h2>
-        Two hearts,
-        <br>
+        Two hearts,<br>
         <i>one journey.</i>
       </h2>
 
@@ -305,20 +175,18 @@
             Ayesha Ahmed
           </h3>
 
-          <p class="urdu" lang="ur">
+          <p class="urdu" lang="ur" dir="rtl">
             عائشہ احمد
           </p>
 
           <span>
-            Daughter of Mr. &amp; Mrs. Ahmed
+            Daughter of Mr. & Mrs. Ahmed
           </span>
 
         </div>
 
 
-        <div class="ampersand">
-          &amp;
-        </div>
+        <div class="ampersand">&</div>
 
 
         <!-- GROOM -->
@@ -336,12 +204,12 @@
             Hamza Khan
           </h3>
 
-          <p class="urdu" lang="ur">
+          <p class="urdu" lang="ur" dir="rtl">
             حمزہ خان
           </p>
 
           <span>
-            Son of Mr. &amp; Mrs. Khan
+            Son of Mr. & Mrs. Khan
           </span>
 
         </div>
@@ -353,14 +221,10 @@
 
 
 
-    <!-- ==========================================
-         EVENTS
-    =========================================== -->
+    <!-- EVENTS -->
     <section class="events reveal">
 
-      <div class="section-mark">
-        03
-      </div>
+      <div class="section-mark">03</div>
 
       <p class="eyebrow">
         SAVE THE DATES
@@ -368,26 +232,18 @@
 
 
       <h2>
-        Our wedding
-        <br>
+        Our wedding<br>
         <i>celebrations.</i>
       </h2>
-
 
 
       <div class="event-list">
 
 
         <!-- MEHNDI -->
-        <article
-          class="event-card"
-          tabindex="0"
-        >
+        <article class="event-card" tabindex="0">
 
-          <div class="event-icon">
-            ☾
-          </div>
-
+          <div class="event-icon">☾</div>
 
           <div>
 
@@ -395,11 +251,9 @@
               01 · THURSDAY
             </p>
 
-            <h3>
-              Mehndi
-            </h3>
+            <h3>Mehndi</h3>
 
-            <p class="urdu" lang="ur">
+            <p class="urdu" lang="ur" dir="rtl">
               مہندی
             </p>
 
@@ -413,11 +267,7 @@
 
           </div>
 
-
-          <button class="event-more">
-            +
-          </button>
-
+          <button class="event-more">+</button>
 
           <div class="event-details">
             An evening of colour, laughter, dholki and mehndi.
@@ -429,15 +279,9 @@
 
 
         <!-- NIKAH -->
-        <article
-          class="event-card"
-          tabindex="0"
-        >
+        <article class="event-card" tabindex="0">
 
-          <div class="event-icon">
-            ♡
-          </div>
-
+          <div class="event-icon">♡</div>
 
           <div>
 
@@ -445,11 +289,9 @@
               02 · FRIDAY
             </p>
 
-            <h3>
-              Nikah
-            </h3>
+            <h3>Nikah</h3>
 
-            <p class="urdu" lang="ur">
+            <p class="urdu" lang="ur" dir="rtl">
               نکاح
             </p>
 
@@ -463,11 +305,7 @@
 
           </div>
 
-
-          <button class="event-more">
-            +
-          </button>
-
+          <button class="event-more">+</button>
 
           <div class="event-details">
             A simple and blessed Nikah ceremony surrounded by
@@ -479,15 +317,9 @@
 
 
         <!-- BARAT -->
-        <article
-          class="event-card"
-          tabindex="0"
-        >
+        <article class="event-card" tabindex="0">
 
-          <div class="event-icon">
-            ✦
-          </div>
-
+          <div class="event-icon">✦</div>
 
           <div>
 
@@ -495,11 +327,9 @@
               03 · SATURDAY
             </p>
 
-            <h3>
-              Barat
-            </h3>
+            <h3>Barat</h3>
 
-            <p class="urdu" lang="ur">
+            <p class="urdu" lang="ur" dir="rtl">
               بارات
             </p>
 
@@ -513,11 +343,7 @@
 
           </div>
 
-
-          <button class="event-more">
-            +
-          </button>
-
+          <button class="event-more">+</button>
 
           <div class="event-details">
             A traditional evening of family, music, dinner
@@ -529,15 +355,9 @@
 
 
         <!-- WALIMA -->
-        <article
-          class="event-card"
-          tabindex="0"
-        >
+        <article class="event-card" tabindex="0">
 
-          <div class="event-icon">
-            ❀
-          </div>
-
+          <div class="event-icon">❀</div>
 
           <div>
 
@@ -545,11 +365,9 @@
               04 · SUNDAY
             </p>
 
-            <h3>
-              Walima
-            </h3>
+            <h3>Walima</h3>
 
-            <p class="urdu" lang="ur">
+            <p class="urdu" lang="ur" dir="rtl">
               ولیمہ
             </p>
 
@@ -563,11 +381,7 @@
 
           </div>
 
-
-          <button class="event-more">
-            +
-          </button>
-
+          <button class="event-more">+</button>
 
           <div class="event-details">
             Join us for dinner as we celebrate the beginning
@@ -583,19 +397,15 @@
 
 
 
-    <!-- ==========================================
-         COUNTDOWN
-    =========================================== -->
+    <!-- COUNTDOWN -->
     <section class="countdown reveal">
 
       <p class="eyebrow">
         THE BIG DAY
       </p>
 
-
       <h2>
-        Counting down to
-        <br>
+        Counting down to<br>
         <i>forever.</i>
       </h2>
 
@@ -634,27 +444,19 @@
 
 
 
-    <!-- ==========================================
-         DUA
-    =========================================== -->
+    <!-- DUA -->
     <section class="dua reveal">
 
       <div class="dua-card">
 
-        <div class="ornament">
-          ❀
-        </div>
-
+        <div class="ornament">❀</div>
 
         <p class="eyebrow">
           A LITTLE DUA
         </p>
 
 
-        <p
-          class="urdu-big"
-          lang="ur"
-        >
+        <p class="urdu big" lang="ur" dir="rtl">
           اللہ تعالیٰ اس نئے سفر کو محبت، خوشیوں اور برکتوں سے بھر دے۔ آمین
         </p>
 
@@ -670,14 +472,10 @@
 
 
 
-    <!-- ==========================================
-         GALLERY
-    =========================================== -->
+    <!-- GALLERY -->
     <section class="gallery reveal">
 
-      <div class="section-mark">
-        04
-      </div>
+      <div class="section-mark">04</div>
 
       <p class="eyebrow">
         OUR MEMORIES
@@ -685,8 +483,7 @@
 
 
       <h2>
-        A few moments
-        <br>
+        A few moments<br>
         <i>before forever.</i>
       </h2>
 
@@ -713,23 +510,17 @@
 
 
       <p class="photo-note">
-        Photo placeholders — replace these with the couple's
-        pictures later.
+        Photo placeholders — replace these with the couple's pictures later.
       </p>
 
     </section>
 
 
 
-    <!-- ==========================================
-         VENUE
-    =========================================== -->
+    <!-- VENUE -->
     <section class="venue reveal">
 
-      <div class="section-mark">
-        05
-      </div>
-
+      <div class="section-mark">05</div>
 
       <p class="eyebrow">
         WHERE TO JOIN US
@@ -737,8 +528,7 @@
 
 
       <h2>
-        Come celebrate
-        <br>
+        Come celebrate<br>
         <i>with us.</i>
       </h2>
 
@@ -748,13 +538,9 @@
 
         <div class="map-placeholder">
 
-          <span>
-            ✦
-          </span>
+          <span>✦</span>
 
-          <small>
-            LAHORE
-          </small>
+          <small>LAHORE</small>
 
         </div>
 
@@ -766,8 +552,7 @@
           </h3>
 
           <p>
-            Canal Bank Road
-            <br>
+            Canal Bank Road<br>
             Lahore, Pakistan
           </p>
 
@@ -790,15 +575,10 @@
 
 
 
-    <!-- ==========================================
-         RSVP
-    =========================================== -->
+    <!-- RSVP -->
     <section class="rsvp reveal">
 
-      <div class="section-mark">
-        06
-      </div>
-
+      <div class="section-mark">06</div>
 
       <p class="eyebrow">
         WE'D LOVE TO SEE YOU
@@ -806,8 +586,7 @@
 
 
       <h2>
-        Will you
-        <br>
+        Will you<br>
         <i>join us?</i>
       </h2>
 
@@ -872,36 +651,27 @@
           class="form-message"
         ></p>
 
-
       </div>
 
     </section>
 
 
 
-    <!-- ==========================================
-         FOOTER
-    =========================================== -->
+    <!-- FOOTER -->
     <footer>
 
-
-      <p
-        class="urdu-big"
-        lang="ur"
-      >
+      <p class="urdu big" lang="ur" dir="rtl">
         دعاؤں میں یاد رکھیے گا
       </p>
 
 
       <h2>
-        Ayesha
-        <span>&amp;</span>
-        Hamza
+        Ayesha <span>&</span> Hamza
       </h2>
 
 
       <p>
-        With love, laughter &amp; duas · 2027
+        With love, laughter & duas · 2027
       </p>
 
 
@@ -912,7 +682,6 @@
         ↑ Back to top
       </button>
 
-
     </footer>
 
 
@@ -920,68 +689,29 @@
 
 
 
-  <!-- ==========================================
-       OPTIONAL MUSIC
-  =========================================== -->
-
-  <audio
-    id="weddingMusic"
-    loop
-    preload="none"
-  >
+  <!-- OPTIONAL MUSIC -->
+  <audio id="weddingMusic" loop preload="none">
 
     <!--
-      Put your music file here:
+      To add music:
+      upload your MP3 as:
 
       assets/wedding-music.mp3
 
-      Then uncomment:
+      Then remove the comments around the source below.
+    -->
 
-      <source
-        src="assets/wedding-music.mp3"
-        type="audio/mpeg"
-      >
+    <!--
+    <source
+      src="assets/wedding-music.mp3"
+      type="audio/mpeg"
+    >
     -->
 
   </audio>
 
 
-
   <script src="script.js"></script>
-
-
-  <!-- URDU LANGUAGE SWITCH FONT SUPPORT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-      const languageText = document.getElementById("languageText");
-      const languageButtons = document.querySelectorAll(".lang");
-
-      languageButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-          if (button.dataset.lang === "ur") {
-
-            languageText.classList.add("urdu-mode");
-            languageText.setAttribute("lang", "ur");
-            languageText.setAttribute("dir", "rtl");
-
-          } else {
-
-            languageText.classList.remove("urdu-mode");
-            languageText.setAttribute("lang", "en");
-            languageText.setAttribute("dir", "ltr");
-
-          }
-
-        });
-
-      });
-
-    });
-  </script>
-
 
 </body>
 </html>
