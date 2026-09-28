@@ -2,63 +2,101 @@
    LOADER
 ========================================================= */
 
-const loader = document.getElementById("loader");
-const invitation = document.getElementById("invitation");
+const loader =
+  document.getElementById("loader");
 
-window.addEventListener("load", () => {
+const invitation =
+  document.getElementById("invitation");
 
-  setTimeout(() => {
 
-    loader.classList.add("hide");
-    invitation.classList.remove("hidden");
+window.addEventListener(
+  "load",
+  () => {
 
-  }, 900);
+    setTimeout(
+      () => {
 
-});
+        loader.classList.add("hide");
+
+        invitation.classList.remove(
+          "hidden"
+        );
+
+      },
+      900
+    );
+
+  }
+);
 
 
 /* =========================================================
    OPEN INVITATION
 ========================================================= */
 
-document.getElementById("openBtn").addEventListener("click", () => {
+document
+  .getElementById("openBtn")
+  .addEventListener(
+    "click",
+    () => {
 
-  document
-    .querySelector(".welcome")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
+      document
+        .querySelector(".welcome")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
 
-  burstPetals(18);
+      burstPetals(18);
 
-});
+    }
+  );
 
 
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL ANIMATION
 ========================================================= */
 
-const observer = new IntersectionObserver(
-  (entries) => {
+const observer =
+  new IntersectionObserver(
 
-    entries.forEach(entry => {
+    entries => {
 
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
+      entries.forEach(
+        entry => {
 
-    });
+          if (
+            entry.isIntersecting
+          ) {
 
-  },
-  {
-    threshold: 0.12
-  }
-);
+            entry.target
+              .classList
+              .add("visible");
+
+          }
+
+        }
+      );
+
+    },
+
+    {
+      threshold: 0.12
+    }
+
+  );
 
 
 document
   .querySelectorAll(".reveal")
-  .forEach(el => observer.observe(el));
+  .forEach(
+    element => {
+
+      observer.observe(
+        element
+      );
+
+    }
+  );
 
 
 /* =========================================================
@@ -67,29 +105,36 @@ document
 
 document
   .querySelectorAll(".event-card")
-  .forEach(card => {
+  .forEach(
+    card => {
 
-    card.addEventListener("click", e => {
+      card.addEventListener(
+        "click",
+        event => {
 
-      if (
-        e.target.classList.contains("event-more") ||
-        e.currentTarget === card
-      ) {
+          card
+            .classList
+            .toggle("open");
 
-        card.classList.toggle("open");
 
-        const btn =
-          card.querySelector(".event-more");
+          const button =
+            card.querySelector(
+              ".event-more"
+            );
 
-        btn.textContent =
-          card.classList.contains("open")
-            ? "−"
-            : "+";
-      }
 
-    });
+          button.textContent =
+            card.classList.contains(
+              "open"
+            )
+              ? "−"
+              : "+";
 
-  });
+        }
+      );
+
+    }
+  );
 
 
 /* =========================================================
@@ -109,55 +154,88 @@ const langText = {
 
 document
   .querySelectorAll(".lang")
-  .forEach(btn => {
+  .forEach(
+    button => {
 
-    btn.addEventListener("click", () => {
+      button.addEventListener(
+        "click",
+        () => {
 
-      document
-        .querySelectorAll(".lang")
-        .forEach(x =>
-          x.classList.remove("active")
-        );
+          document
+            .querySelectorAll(".lang")
+            .forEach(
+              item => {
 
+                item.classList.remove(
+                  "active"
+                );
 
-      btn.classList.add("active");
-
-
-      const languageText =
-        document.getElementById("languageText");
-
-
-      const selectedLanguage =
-        btn.dataset.lang;
+              }
+            );
 
 
-      languageText.textContent =
-        langText[selectedLanguage];
+          button.classList.add(
+            "active"
+          );
 
 
-      if (selectedLanguage === "ur") {
+          const text =
+            document.getElementById(
+              "languageText"
+            );
 
-        languageText.dir = "rtl";
-        languageText.lang = "ur";
 
-        languageText.classList.add(
-          "urdu-mode"
-        );
+          const language =
+            button.dataset.lang;
 
-      } else {
 
-        languageText.dir = "ltr";
-        languageText.lang = "en";
+          text.textContent =
+            langText[language];
 
-        languageText.classList.remove(
-          "urdu-mode"
-        );
 
-      }
+          if (
+            language === "ur"
+          ) {
 
-    });
+            text.setAttribute(
+              "lang",
+              "ur"
+            );
 
-  });
+            text.setAttribute(
+              "dir",
+              "rtl"
+            );
+
+            text.classList.add(
+              "urdu-mode"
+            );
+
+          }
+
+          else {
+
+            text.setAttribute(
+              "lang",
+              "en"
+            );
+
+            text.setAttribute(
+              "dir",
+              "ltr"
+            );
+
+            text.classList.remove(
+              "urdu-mode"
+            );
+
+          }
+
+        }
+      );
+
+    }
+  );
 
 
 /* =========================================================
@@ -172,67 +250,104 @@ const weddingDate =
 
 function updateCountdown() {
 
-  const now = Date.now();
+  const now =
+    Date.now();
+
 
   let distance =
     weddingDate - now;
 
 
-  if (distance < 0) {
+  if (
+    distance < 0
+  ) {
+
     distance = 0;
+
   }
 
 
-  const d =
+  const days =
     Math.floor(
-      distance / 86400000
+      distance /
+      86400000
     );
 
 
-  const h =
+  const hours =
     Math.floor(
-      (distance % 86400000) /
+      (
+        distance %
+        86400000
+      ) /
       3600000
     );
 
 
-  const m =
+  const minutes =
     Math.floor(
-      (distance % 3600000) /
+      (
+        distance %
+        3600000
+      ) /
       60000
     );
 
 
-  const s =
+  const seconds =
     Math.floor(
-      (distance % 60000) /
+      (
+        distance %
+        60000
+      ) /
       1000
     );
 
 
-  document.getElementById("days")
+  document
+    .getElementById("days")
     .textContent =
-    String(d).padStart(3, "0");
+      String(days)
+        .padStart(
+          3,
+          "0"
+        );
 
 
-  document.getElementById("hours")
+  document
+    .getElementById("hours")
     .textContent =
-    String(h).padStart(2, "0");
+      String(hours)
+        .padStart(
+          2,
+          "0"
+        );
 
 
-  document.getElementById("minutes")
+  document
+    .getElementById("minutes")
     .textContent =
-    String(m).padStart(2, "0");
+      String(minutes)
+        .padStart(
+          2,
+          "0"
+        );
 
 
-  document.getElementById("seconds")
+  document
+    .getElementById("seconds")
     .textContent =
-    String(s).padStart(2, "0");
+      String(seconds)
+        .padStart(
+          2,
+          "0"
+        );
 
 }
 
 
 updateCountdown();
+
 
 setInterval(
   updateCountdown,
@@ -241,27 +356,42 @@ setInterval(
 
 
 /* =========================================================
-   RSVP ATTENDANCE
+   RSVP BUTTONS
 ========================================================= */
 
 document
   .querySelectorAll(".attend")
-  .forEach(btn => {
+  .forEach(
+    button => {
 
-    btn.addEventListener("click", () => {
+      button.addEventListener(
+        "click",
+        () => {
 
-      document
-        .querySelectorAll(".attend")
-        .forEach(x =>
-          x.classList.remove("active")
-        );
+          document
+            .querySelectorAll(
+              ".attend"
+            )
+            .forEach(
+              item => {
+
+                item.classList.remove(
+                  "active"
+                );
+
+              }
+            );
 
 
-      btn.classList.add("active");
+          button.classList.add(
+            "active"
+          );
 
-    });
+        }
+      );
 
-  });
+    }
+  );
 
 
 /* =========================================================
@@ -270,65 +400,110 @@ document
 
 document
   .getElementById("rsvpBtn")
-  .addEventListener("click", () => {
+  .addEventListener(
+    "click",
+    () => {
 
-    const name =
+      const name =
+        document
+          .getElementById(
+            "guestName"
+          )
+          .value
+          .trim();
+
+
+      const count =
+        document
+          .getElementById(
+            "guestCount"
+          )
+          .value;
+
+
+      const selected =
+        document
+          .querySelector(
+            ".attend.active"
+          );
+
+
+      const answer =
+        selected.dataset.answer;
+
+
+      if (
+        !name
+      ) {
+
+        document
+          .getElementById(
+            "rsvpMessage"
+          )
+          .textContent =
+            "Please enter your name first.";
+
+        return;
+
+      }
+
+
       document
-        .getElementById("guestName")
-        .value
-        .trim();
-
-
-    const count =
-      document
-        .getElementById("guestCount")
-        .value;
-
-
-    const answer =
-      document
-        .querySelector(".attend.active")
-        .dataset.answer;
-
-
-    if (!name) {
-
-      document
-        .getElementById("rsvpMessage")
+        .getElementById(
+          "rsvpMessage"
+        )
         .textContent =
-        "Please enter your name first.";
+          "";
 
-      return;
+
+      let message;
+
+
+      if (
+        answer === "joy"
+      ) {
+
+        message =
+          `Assalamualaikum! I’m ${name}. I’m joyfully attending Ayesha & Hamza’s wedding with ${count} guest(s). ❤️`;
+
+      }
+
+      else {
+
+        message =
+          `Assalamualaikum! I’m ${name}. Sadly, I won’t be able to attend Ayesha & Hamza’s wedding. Sending my love and duas. ❤️`;
+
+      }
+
+
+      /*
+        IMPORTANT:
+
+        Replace this example
+        number with your actual
+        RSVP WhatsApp number.
+
+        Do not use + or spaces.
+
+        Example:
+        923001234567
+      */
+
+      const phone =
+        "923001234567";
+
+
+      const url =
+        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+
+      window.open(
+        url,
+        "_blank"
+      );
 
     }
-
-
-    const text =
-      answer === "joy"
-
-        ? `Assalamualaikum! I’m ${name}. I’m joyfully attending Ayesha & Hamza’s wedding with ${count} guest(s). ❤️`
-
-        : `Assalamualaikum! I’m ${name}. Sadly, I won’t be able to attend Ayesha & Hamza’s wedding. Sending my love and duas. ❤️`;
-
-
-    /*
-      Replace this with your real
-      WhatsApp RSVP number.
-
-      Format example:
-      923001234567
-    */
-
-    const phone =
-      "923001234567";
-
-
-    window.open(
-      `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
-      "_blank"
-    );
-
-  });
+  );
 
 
 /* =========================================================
@@ -337,24 +512,35 @@ document
 
 document
   .getElementById("topBtn")
-  .addEventListener("click", () => {
+  .addEventListener(
+    "click",
+    () => {
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+      window.scrollTo({
 
-  });
+        top: 0,
+
+        behavior:
+          "smooth"
+
+      });
+
+    }
+  );
 
 
 /* =========================================================
    PETALS
 ========================================================= */
 
-function burstPetals(count = 10) {
+function burstPetals(
+  count = 10
+) {
 
   const container =
-    document.getElementById("petals");
+    document.getElementById(
+      "petals"
+    );
 
 
   for (
@@ -363,48 +549,70 @@ function burstPetals(count = 10) {
     i++
   ) {
 
-    const p =
-      document.createElement("span");
+    const petal =
+      document.createElement(
+        "span"
+      );
 
 
-    p.className =
+    petal.className =
       "petal";
 
 
-    p.textContent =
-      ["❀", "✦", "•"][
+    const symbols =
+      [
+        "❀",
+        "✦",
+        "•"
+      ];
+
+
+    petal.textContent =
+      symbols[
         Math.floor(
-          Math.random() * 3
+          Math.random() *
+          symbols.length
         )
       ];
 
 
-    p.style.left =
-      Math.random() * 100 +
+    petal.style.left =
+      (
+        Math.random() *
+        100
+      ) +
       "vw";
 
 
-    p.style.animationDuration =
+    petal.style.animationDuration =
       (
         4 +
-        Math.random() * 4
+        Math.random() *
+        4
       ) +
       "s";
 
 
-    p.style.fontSize =
+    petal.style.fontSize =
       (
         10 +
-        Math.random() * 14
+        Math.random() *
+        14
       ) +
       "px";
 
 
-    container.appendChild(p);
+    container.appendChild(
+      petal
+    );
 
 
     setTimeout(
-      () => p.remove(),
+      () => {
+
+        petal.remove();
+
+      },
       9000
     );
 
@@ -414,7 +622,11 @@ function burstPetals(count = 10) {
 
 
 setInterval(
-  () => burstPetals(2),
+  () => {
+
+    burstPetals(2);
+
+  },
   4500
 );
 
@@ -429,24 +641,28 @@ const music =
   );
 
 
-const musicBtn =
+const musicButton =
   document.getElementById(
     "musicBtn"
   );
 
 
-musicBtn.addEventListener(
+musicButton.addEventListener(
   "click",
   async () => {
 
     const source =
-      music.querySelector("source");
+      music.querySelector(
+        "source"
+      );
 
 
-    if (!source) {
+    if (
+      !source
+    ) {
 
       alert(
-        "To add music, place your MP3 in assets/wedding-music.mp3 and uncomment the source line in index.html."
+        "Music is ready to be added. Upload your MP3 as assets/wedding-music.mp3 and uncomment the source line in index.html."
       );
 
       return;
@@ -456,38 +672,56 @@ musicBtn.addEventListener(
 
     try {
 
-      if (music.paused) {
+      if (
+        music.paused
+      ) {
 
         await music.play();
 
-        musicBtn.classList.add(
-          "playing"
-        );
 
-        musicBtn.setAttribute(
-          "aria-label",
-          "Pause music"
-        );
+        musicButton
+          .classList
+          .add(
+            "playing"
+          );
 
-      } else {
 
-        music.pause();
-
-        musicBtn.classList.remove(
-          "playing"
-        );
-
-        musicBtn.setAttribute(
-          "aria-label",
-          "Play music"
-        );
+        musicButton
+          .setAttribute(
+            "aria-label",
+            "Pause music"
+          );
 
       }
 
-    } catch (error) {
+      else {
+
+        music.pause();
+
+
+        musicButton
+          .classList
+          .remove(
+            "playing"
+          );
+
+
+        musicButton
+          .setAttribute(
+            "aria-label",
+            "Play music"
+          );
+
+      }
+
+    }
+
+    catch (
+      error
+    ) {
 
       console.log(
-        "Music could not be started:",
+        "Music playback error:",
         error
       );
 
