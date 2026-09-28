@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173c32">
+  <title>Ayesha & Hamza | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader" class="loader">
+    <div class="loader-flower">❀</div>
+    <p>بسم اللہ الرحمن الرحیم</p>
+    <span>Preparing your invitation…</span>
+  </div>
+
+  <div id="petals"></div>
+
+  <button id="musicBtn" class="music-btn" aria-label="Toggle music">♫</button>
+
+  <main id="invitation" class="hidden">
+    <section class="hero" id="home">
+      <div class="ornament top">✦</div>
+      <p class="arabic small">بسم اللہ الرحمن الرحیم</p>
+      <p class="eyebrow">TOGETHER WITH THEIR FAMILIES</p>
+
+      <div class="names">
+        <span>Ayesha</span>
+        <b>&</b>
+        <span>Hamza</span>
+      </div>
+
+      <p class="arabic names-urdu">عائشہ & حمزہ</p>
+      <div class="gold-line"></div>
+
+      <p class="intro">Request the pleasure of your company<br>as they begin a beautiful new chapter together.</p>
+
+      <button id="openBtn" class="gold-btn">Open Invitation <span>↗</span></button>
+      <div class="scroll-hint">SCROLL TO DISCOVER <span>↓</span></div>
+    </section>
+
+    <section class="welcome reveal">
+      <div class="section-mark">01</div>
+      <p class="eyebrow">WITH LOVE & DUAS</p>
+      <h2>A new chapter,<br><i>one beautiful beginning.</i></h2>
+      <p class="arabic quote">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا</p>
+      <p class="translation">“And among His signs is that He created for you spouses from among yourselves so that you may find tranquility in them.”</p>
+      <div class="switch">
+        <button class="lang active" data-lang="en">English</button>
+        <button class="lang" data-lang="ur">اردو</button>
+      </div>
+      <p id="languageText" class="language-text">With the blessings of our families, we invite you to share in the joy of our wedding celebrations.</p>
+    </section>
+
+    <section class="couple reveal">
+      <div class="section-mark">02</div>
+      <p class="eyebrow">THE COUPLE</p>
+      <h2>Two hearts,<br><i>one journey.</i></h2>
+
+      <div class="couple-grid">
+        <div class="person-card">
+          <div class="portrait placeholder">A</div>
+          <p class="role">THE BRIDE</p>
+          <h3>Ayesha Ahmed</h3>
+          <p class="arabic">عائشہ احمد</p>
+          <span>Daughter of Mr. & Mrs. Ahmed</span>
+        </div>
+        <div class="ampersand">&</div>
+        <div class="person-card">
+          <div class="portrait placeholder">H</div>
+          <p class="role">THE GROOM</p>
+          <h3>Hamza Khan</h3>
+          <p class="arabic">حمزہ خان</p>
+          <span>Son of Mr. & Mrs. Khan</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="events reveal">
+      <div class="section-mark">03</div>
+      <p class="eyebrow">SAVE THE DATES</p>
+      <h2>Our wedding<br><i>celebrations.</i></h2>
+
+      <div class="event-list">
+        <article class="event-card" tabindex="0">
+          <div class="event-icon">☾</div>
+          <div>
+            <p class="role">01 · THURSDAY</p>
+            <h3>Mehndi</h3>
+            <p class="arabic">مہندی</p>
+            <span>12 March 2027 · 7:00 PM</span>
+            <strong>Rose Garden Marquee · Lahore</strong>
+          </div>
+          <button class="event-more">+</button>
+          <div class="event-details">An evening of colour, laughter, dholki and mehndi. Come ready to celebrate!</div>
+        </article>
+
+        <article class="event-card" tabindex="0">
+          <div class="event-icon">♡</div>
+          <div>
+            <p class="role">02 · FRIDAY</p>
+            <h3>Nikah</h3>
+            <p class="arabic">نکاح</p>
+            <span>13 March 2027 · 5:30 PM</span>
+            <strong>Masjid-e-Noor · Lahore</strong>
+          </div>
+          <button class="event-more">+</button>
+          <div class="event-details">A simple and blessed Nikah ceremony surrounded by family and loved ones.</div>
+        </article>
+
+        <article class="event-card" tabindex="0">
+          <div class="event-icon">✦</div>
+          <div>
+            <p class="role">03 · SATURDAY</p>
+            <h3>Barat</h3>
+            <p class="arabic">بارات</p>
+            <span>14 March 2027 · 7:30 PM</span>
+            <strong>Royal Palm Hall · Lahore</strong>
+          </div>
+          <button class="event-more">+</button>
+          <div class="event-details">A traditional evening of family, music, dinner and unforgettable memories.</div>
+        </article>
+
+        <article class="event-card" tabindex="0">
+          <div class="event-icon">❀</div>
+          <div>
+            <p class="role">04 · SUNDAY</p>
+            <h3>Walima</h3>
+            <p class="arabic">ولیمہ</p>
+            <span>15 March 2027 · 7:30 PM</span>
+            <strong>The Grand Orchid · Lahore</strong>
+          </div>
+          <button class="event-more">+</button>
+          <div class="event-details">Join us for dinner as we celebrate the beginning of Ayesha and Hamza's new life together.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="countdown reveal">
+      <p class="eyebrow">THE BIG DAY</p>
+      <h2>Counting down to<br><i>forever.</i></h2>
+      <div class="timer">
+        <div><strong id="days">000</strong><span>DAYS</span></div>
+        <b>:</b>
+        <div><strong id="hours">00</strong><span>HOURS</span></div>
+        <b>:</b>
+        <div><strong id="minutes">00</strong><span>MINUTES</span></div>
+        <b>:</b>
+        <div><strong id="seconds">00</strong><span>SECONDS</span></div>
+      </div>
+    </section>
+
+    <section class="dua reveal">
+      <div class="dua-card">
+        <div class="ornament">❀</div>
+        <p class="eyebrow">A LITTLE DUA</p>
+        <p class="arabic big">اللہ تعالیٰ اس نئے سفر کو محبت، خوشیوں اور برکتوں سے بھر دے۔ آمین</p>
+        <p>May Allah fill this new journey with love, happiness, understanding and countless blessings. Ameen.</p>
+      </div>
+    </section>
+
+    <section class="gallery reveal">
+      <div class="section-mark">04</div>
+      <p class="eyebrow">OUR MEMORIES</p>
+      <h2>A few moments<br><i>before forever.</i></h2>
+      <div class="photo-grid">
+        <div class="photo p1"><span>Our Story</span></div>
+        <div class="photo p2"><span>Always</span></div>
+        <div class="photo p3"><span>Us</span></div>
+        <div class="photo p4"><span>Forever</span></div>
+      </div>
+      <p class="photo-note">Photo placeholders — replace these with the couple's pictures later.</p>
+    </section>
+
+    <section class="venue reveal">
+      <div class="section-mark">05</div>
+      <p class="eyebrow">WHERE TO JOIN US</p>
+      <h2>Come celebrate<br><i>with us.</i></h2>
+      <div class="venue-card">
+        <div class="map-placeholder"><span>✦</span><small>LAHORE</small></div>
+        <div class="venue-info">
+          <h3>Royal Palm Hall</h3>
+          <p>Canal Bank Road<br>Lahore, Pakistan</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Royal+Palm+Lahore" target="_blank" rel="noopener" class="outline-btn">Open in Maps ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="rsvp reveal">
+      <div class="section-mark">06</div>
+      <p class="eyebrow">WE'D LOVE TO SEE YOU</p>
+      <h2>Will you<br><i>join us?</i></h2>
+      <div class="rsvp-card">
+        <label>Your name<input id="guestName" type="text" placeholder="Enter your name"></label>
+        <label>Number of guests<input id="guestCount" type="number" min="1" max="20" value="1"></label>
+        <div class="attendance">
+          <button class="attend active" data-answer="joy">♥ Joyfully attending</button>
+          <button class="attend" data-answer="regret">Regretfully declining</button>
+        </div>
+        <button id="rsvpBtn" class="gold-btn full">Send RSVP on WhatsApp</button>
+        <p id="rsvpMessage" class="form-message"></p>
+      </div>
+    </section>
+
+    <footer>
+      <p class="arabic big">دعاؤں میں یاد رکھیے گا</p>
+      <h2>Ayesha <span>&</span> Hamza</h2>
+      <p>With love, laughter & duas · 2027</p>
+      <button id="topBtn" class="top-btn">↑ Back to top</button>
+    </footer>
+  </main>
+
+  <audio id="weddingMusic" loop preload="none">
+    <!-- Optional: put your own music file at assets/wedding-music.mp3 and uncomment source below -->
+    <!-- <source src="assets/wedding-music.mp3" type="audio/mpeg"> -->
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
