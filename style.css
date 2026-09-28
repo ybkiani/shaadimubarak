@@ -1,125 +1,203 @@
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+/* =========================================================
+   RESET
+========================================================= */
 
-:root{
-  --green:#173c32;
-  --green2:#245446;
-  --gold:#c9a45c;
-  --cream:#f8f3e8;
-  --ink:#24352f;
-  --muted:#7d8078;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--cream);
-  color:var(--ink);
-  font-family:"Cormorant Garamond",serif;
-  overflow-x:hidden;
-}
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.16;
-  background-image:radial-gradient(#b48c45 .7px,transparent .7px);
-  background-size:15px 15px;
-  z-index:10;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 
-/* =========================
-   LOADER
-========================= */
-
-.loader{
-  position:fixed;
-  inset:0;
-  background:var(--green);
-  color:#fff9ed;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  transition:opacity .8s,visibility .8s;
-}
-
-.loader.hide{
-  opacity:0;
-  visibility:hidden;
-}
-
-.loader-flower{
-  font-size:48px;
-  color:var(--gold);
-  animation:pulse 1.5s infinite;
-}
-
-.loader p{
-  font-size:28px;
-  margin:15px 0 5px;
-}
-
-.loader span{
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:10px;
-  opacity:.7;
-}
-
-.hidden{
-  display:none;
-}
-
-main{
-  opacity:1;
+:root {
+  --green: #173c32;
+  --green2: #245446;
+  --gold: #c9a45c;
+  --cream: #f8f3e8;
+  --ink: #24352f;
+  --muted: #7d8078;
 }
 
 
-/* =========================
-   URDU FONT
-========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  overflow-x: hidden;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .16;
+
+  background-image:
+    radial-gradient(
+      #b48c45 .7px,
+      transparent .7px
+    );
+
+  background-size: 15px 15px;
+  z-index: 10;
+}
+
+
+/* =========================================================
+   IMPORTANT URDU FONT FIX
+========================================================= */
 
 .urdu,
+[lang="ur"],
 .names-urdu,
+.hero-urdu,
+.loader-urdu,
+.person-urdu,
+.event-urdu,
+.dua-urdu,
+.footer-urdu,
 .urdu-button,
-.language-text.urdu-mode{
-  font-family:"Noto Nastaliq Urdu","Noto Serif Arabic",serif !important;
-  direction:rtl;
-  unicode-bidi:isolate;
-  font-weight:500;
+.language-text.urdu-mode {
 
-  /* Important for Nastaliq */
-  line-height:2.35;
-  overflow:visible;
-  visibility:visible;
-  opacity:1;
-  padding-top:.18em;
-  padding-bottom:.28em;
+  font-family:
+    "Noto Nastaliq Urdu",
+    serif !important;
+
+  direction: rtl !important;
+
+  unicode-bidi: isolate !important;
+
+  font-style: normal !important;
+
+  font-weight: 500 !important;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+
+  overflow: visible !important;
+
+  height: auto !important;
+
+  max-height: none !important;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
 }
 
-.quran-arabic{
-  font-family:"Amiri",serif !important;
-  direction:rtl;
-  unicode-bidi:isolate;
+
+/* Quranic Arabic uses Amiri */
+
+.quran-arabic,
+[lang="ar"] {
+
+  font-family:
+    "Amiri",
+    serif !important;
+
+  direction: rtl;
+
+  unicode-bidi: isolate;
 }
 
 
-/* =========================
+/* =========================================================
+   LOADER
+========================================================= */
+
+.loader {
+  position: fixed;
+  inset: 0;
+
+  background: var(--green);
+  color: #fff9ed;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+
+  transition:
+    opacity .8s,
+    visibility .8s;
+}
+
+
+.loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.loader-flower {
+  font-size: 48px;
+  color: var(--gold);
+
+  animation:
+    pulse 1.5s infinite;
+}
+
+
+.loader-urdu {
+
+  color: #fff9ed !important;
+
+  font-size: 27px !important;
+
+  line-height: 3 !important;
+
+  text-align: center;
+
+  min-height: 80px;
+
+  padding:
+    10px 15px;
+
+  position: relative;
+
+  z-index: 10000;
+}
+
+
+.loader span {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  font-size: 10px;
+
+  opacity: .7;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+main {
+  opacity: 1;
+}
+
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
-.hero{
-  min-height:100svh;
+.hero {
+
+  min-height: 100svh;
+
   background:
     linear-gradient(
       135deg,
@@ -132,358 +210,727 @@ main{
       transparent 45%
     );
 
-  color:#fff9ed;
+  color: #fff9ed;
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  display: flex;
 
-  text-align:center;
+  flex-direction: column;
 
-  padding:50px 24px;
+  align-items: center;
 
-  position:relative;
-  overflow:hidden;
+  justify-content: center;
+
+  text-align: center;
+
+  padding:
+    50px 24px;
+
+  position: relative;
+
+  overflow: hidden;
 }
 
-.hero:after{
-  content:"";
-  position:absolute;
 
-  width:420px;
-  height:420px;
+.hero::after {
 
-  border:1px solid rgba(201,164,92,.3);
-  border-radius:50%;
+  content: "";
 
-  top:50%;
-  left:50%;
+  position: absolute;
 
-  transform:translate(-50%,-50%);
+  width: 420px;
+
+  height: 420px;
+
+  border:
+    1px solid
+    rgba(201,164,92,.3);
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform:
+    translate(-50%,-50%);
 
   box-shadow:
-    0 0 0 28px rgba(201,164,92,.03),
-    0 0 0 55px rgba(201,164,92,.03);
-}
+    0 0 0 28px
+    rgba(201,164,92,.03),
 
-.ornament{
-  color:var(--gold);
-  font-size:32px;
-}
+    0 0 0 55px
+    rgba(201,164,92,.03);
 
-.hero .top{
-  margin-bottom:25px;
-  z-index:1;
-}
-
-.small{
-  font-size:25px;
-  z-index:1;
-
-  min-height:2.6em;
-  line-height:2.2;
-}
-
-.eyebrow{
-  font-size:10px;
-  letter-spacing:3px;
-  font-weight:600;
-  color:var(--gold);
-  margin:12px 0;
-  z-index:1;
-}
-
-.hero .eyebrow{
-  color:#e1c58e;
-}
-
-.names{
-  display:flex;
-  align-items:center;
-  gap:20px;
-
-  font-family:"Playfair Display",serif;
-  font-size:clamp(55px,13vw,100px);
-  font-weight:400;
-  line-height:.95;
-
-  z-index:1;
-
-  margin:25px 0 12px;
-}
-
-.names b{
-  font-family:Amiri,serif;
-  color:var(--gold);
-  font-size:55px;
-  font-weight:400;
-}
-
-.names-urdu{
-  font-size:34px;
-  z-index:1;
-
-  min-height:2.5em;
-  line-height:2.25;
-
-  margin-top:0;
-  margin-bottom:5px;
-}
-
-.gold-line{
-  width:70px;
-  height:1px;
-  background:var(--gold);
-  margin:18px 0 25px;
-  z-index:1;
-}
-
-.intro{
-  font-size:18px;
-  line-height:1.5;
-  opacity:.86;
-  z-index:1;
+  pointer-events: none;
 }
 
 
-/* =========================
+.ornament {
+
+  color: var(--gold);
+
+  font-size: 32px;
+}
+
+
+.hero .top {
+
+  margin-bottom: 15px;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* HERO URDU BISMILLAH */
+
+.hero-urdu {
+
+  display: block !important;
+
+  width: 100% !important;
+
+  color: #fff9ed !important;
+
+  font-size: 26px !important;
+
+  line-height: 3 !important;
+
+  text-align: center !important;
+
+  min-height: 80px !important;
+
+  padding:
+    8px 10px !important;
+
+  position: relative !important;
+
+  z-index: 5 !important;
+}
+
+
+.eyebrow {
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  font-weight: 600;
+
+  color: var(--gold);
+
+  margin:
+    12px 0;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.hero .eyebrow {
+
+  color: #e1c58e;
+}
+
+
+/* ENGLISH NAMES */
+
+.names {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(
+      55px,
+      13vw,
+      100px
+    );
+
+  font-weight: 400;
+
+  line-height: .95;
+
+  position: relative;
+
+  z-index: 5;
+
+  margin:
+    15px 0 5px;
+}
+
+
+.names b {
+
+  font-family:
+    "Amiri",
+    serif;
+
+  color: var(--gold);
+
+  font-size: 55px;
+
+  font-weight: 400;
+}
+
+
+/* URDU NAMES */
+
+.names-urdu {
+
+  display: block !important;
+
+  width: 100% !important;
+
+  color: #fff9ed !important;
+
+  font-size: 35px !important;
+
+  line-height: 2.8 !important;
+
+  text-align: center !important;
+
+  min-height: 100px !important;
+
+  padding:
+    8px 10px !important;
+
+  position: relative !important;
+
+  z-index: 5 !important;
+}
+
+
+.gold-line {
+
+  width: 70px;
+
+  height: 1px;
+
+  background:
+    var(--gold);
+
+  margin:
+    10px 0 25px;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+.intro {
+
+  font-size: 18px;
+
+  line-height: 1.5;
+
+  opacity: .86;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .gold-btn,
-.outline-btn{
-  border:0;
-  background:var(--gold);
-  color:#19372f;
+.outline-btn {
 
-  padding:14px 24px;
+  border: 0;
 
-  font-family:inherit;
-  font-size:15px;
-  font-weight:600;
-  letter-spacing:.5px;
+  background:
+    var(--gold);
 
-  cursor:pointer;
+  color:
+    #19372f;
 
-  transition:.25s;
-}
+  padding:
+    14px 24px;
 
-.gold-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
+  font-family:
+    inherit;
 
-.hero .gold-btn{
-  margin-top:28px;
-  z-index:1;
-}
+  font-size:
+    15px;
 
-.scroll-hint{
-  position:absolute;
-  bottom:25px;
+  font-weight:
+    600;
 
-  font-size:9px;
-  letter-spacing:2px;
+  letter-spacing:
+    .5px;
 
-  opacity:.6;
-  z-index:1;
-}
+  cursor:
+    pointer;
 
-.scroll-hint span{
-  margin-left:8px;
+  transition:
+    .25s;
 }
 
 
-/* =========================
+.gold-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(0,0,0,.15);
+}
+
+
+.hero .gold-btn {
+
+  margin-top:
+    28px;
+
+  position:
+    relative;
+
+  z-index:
+    5;
+}
+
+
+.scroll-hint {
+
+  position:
+    absolute;
+
+  bottom:
+    25px;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    2px;
+
+  opacity:
+    .6;
+
+  z-index:
+    5;
+}
+
+
+.scroll-hint span {
+
+  margin-left:
+    8px;
+}
+
+
+/* =========================================================
    GENERAL SECTIONS
-========================= */
+========================================================= */
 
-section{
-  padding:95px 7%;
-  max-width:1100px;
-  margin:auto;
-  position:relative;
+section {
+
+  padding:
+    95px 7%;
+
+  max-width:
+    1100px;
+
+  margin:
+    auto;
+
+  position:
+    relative;
 }
+
 
 .welcome,
 .countdown,
 .dua,
-footer{
-  background:var(--green);
-  color:#fff9ed;
-  max-width:none;
-  text-align:center;
-}
+footer {
 
-.section-mark{
-  position:absolute;
-  left:7%;
-  top:35px;
+  background:
+    var(--green);
 
-  font-size:10px;
-  letter-spacing:2px;
+  color:
+    #fff9ed;
 
-  color:var(--gold);
-  opacity:.8;
-}
+  max-width:
+    none;
 
-h2{
-  font-family:"Playfair Display",serif;
-  font-weight:400;
-  font-size:clamp(40px,6vw,64px);
-  line-height:.98;
-  margin:18px 0 30px;
-}
-
-h2 i{
-  font-family:"Cormorant Garamond",serif;
-  color:#9b7137;
+  text-align:
+    center;
 }
 
 
-/* =========================
+.section-mark {
+
+  position:
+    absolute;
+
+  left:
+    7%;
+
+  top:
+    35px;
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    2px;
+
+  color:
+    var(--gold);
+
+  opacity:
+    .8;
+}
+
+
+h2 {
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-weight:
+    400;
+
+  font-size:
+    clamp(
+      40px,
+      6vw,
+      64px
+    );
+
+  line-height:
+    .98;
+
+  margin:
+    18px 0 30px;
+}
+
+
+h2 i {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  color:
+    #9b7137;
+}
+
+
+/* =========================================================
    WELCOME
-========================= */
+========================================================= */
 
-.welcome{
-  padding-left:10%;
-  padding-right:10%;
-}
+.welcome {
 
-.welcome .eyebrow{
-  margin-top:0;
-}
+  padding-left:
+    10%;
 
-.quote{
-  font-size:27px;
-  line-height:1.9;
-
-  max-width:800px;
-  margin:20px auto;
-}
-
-.translation{
-  font-style:italic;
-
-  max-width:650px;
-  margin:auto;
-
-  opacity:.75;
-
-  font-size:16px;
-  line-height:1.5;
-}
-
-.switch{
-  display:inline-flex;
-
-  border:1px solid rgba(255,255,255,.2);
-
-  margin:30px 0 10px;
-}
-
-.lang{
-  background:none;
-  color:#fff9ed;
-
-  border:0;
-
-  padding:8px 16px;
-
-  font-family:inherit;
-
-  cursor:pointer;
-}
-
-.lang[data-lang="ur"]{
-  font-family:"Noto Nastaliq Urdu",serif !important;
-  line-height:1.8;
-}
-
-.lang.active{
-  background:var(--gold);
-  color:var(--green);
-}
-
-.language-text{
-  max-width:600px;
-  margin:auto;
-
-  font-size:18px;
-  min-height:30px;
-}
-
-.language-text.urdu-mode{
-  font-size:20px;
-  line-height:2.5;
-  min-height:4em;
-  text-align:center;
+  padding-right:
+    10%;
 }
 
 
-/* =========================
+.welcome .eyebrow {
+
+  margin-top:
+    0;
+}
+
+
+.quote {
+
+  font-size:
+    27px;
+
+  line-height:
+    1.9;
+
+  max-width:
+    800px;
+
+  margin:
+    20px auto;
+}
+
+
+.translation {
+
+  font-style:
+    italic;
+
+  max-width:
+    650px;
+
+  margin:
+    auto;
+
+  opacity:
+    .75;
+
+  font-size:
+    16px;
+
+  line-height:
+    1.5;
+}
+
+
+.switch {
+
+  display:
+    inline-flex;
+
+  border:
+    1px solid
+    rgba(255,255,255,.2);
+
+  margin:
+    30px 0 10px;
+}
+
+
+.lang {
+
+  background:
+    none;
+
+  color:
+    #fff9ed;
+
+  border:
+    0;
+
+  padding:
+    8px 16px;
+
+  font-family:
+    inherit;
+
+  cursor:
+    pointer;
+}
+
+
+.lang.active {
+
+  background:
+    var(--gold);
+
+  color:
+    var(--green);
+}
+
+
+.urdu-button {
+
+  font-family:
+    "Noto Nastaliq Urdu",
+    serif !important;
+
+  font-size:
+    16px !important;
+
+  line-height:
+    2 !important;
+
+  padding:
+    3px 18px 8px !important;
+}
+
+
+.language-text {
+
+  max-width:
+    600px;
+
+  margin:
+    auto;
+
+  font-size:
+    18px;
+
+  min-height:
+    50px;
+}
+
+
+.language-text.urdu-mode {
+
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  color:
+    #fff9ed !important;
+
+  font-family:
+    "Noto Nastaliq Urdu",
+    serif !important;
+
+  font-size:
+    21px !important;
+
+  line-height:
+    3 !important;
+
+  text-align:
+    center !important;
+
+  min-height:
+    120px !important;
+
+  padding:
+    12px 10px !important;
+}
+
+
+/* =========================================================
    COUPLE
-========================= */
+========================================================= */
 
-.couple{
-  text-align:center;
+.couple {
+
+  text-align:
+    center;
 }
 
-.couple-grid{
-  display:grid;
-  grid-template-columns:1fr 80px 1fr;
-  align-items:center;
 
-  max-width:850px;
+.couple-grid {
 
-  margin:45px auto 0;
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 80px 1fr;
+
+  align-items:
+    center;
+
+  max-width:
+    850px;
+
+  margin:
+    45px auto 0;
 }
 
-.person-card span{
-  font-size:15px;
-  color:var(--muted);
+
+.person-card span {
+
+  font-size:
+    15px;
+
+  color:
+    var(--muted);
 }
 
-.person-card h3{
-  font-family:"Playfair Display",serif;
 
-  font-size:30px;
-  font-weight:400;
+.person-card h3 {
 
-  margin:12px 0 2px;
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    30px;
+
+  font-weight:
+    400;
+
+  margin:
+    12px 0 0;
 }
 
-.person-card .role{
-  font-size:9px;
-  letter-spacing:2px;
-  color:var(--gold);
+
+.person-card .role {
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    2px;
+
+  color:
+    var(--gold);
 }
 
-.person-card .urdu{
-  font-size:22px;
-  line-height:2.2;
 
-  min-height:2.7em;
+/* PERSON URDU */
 
-  margin-bottom:6px;
+.person-urdu {
+
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  color:
+    var(--ink) !important;
+
+  font-size:
+    23px !important;
+
+  line-height:
+    2.7 !important;
+
+  text-align:
+    center !important;
+
+  min-height:
+    75px !important;
+
+  padding:
+    5px !important;
 }
 
-.ampersand{
-  font-family:Amiri,serif;
 
-  font-size:52px;
+.ampersand {
 
-  color:var(--gold);
+  font-family:
+    Amiri,
+    serif;
+
+  font-size:
+    52px;
+
+  color:
+    var(--gold);
 }
 
-.portrait{
-  width:210px;
-  height:270px;
 
-  margin:auto;
+.portrait {
 
-  border-radius:105px 105px 10px 10px;
+  width:
+    210px;
+
+  height:
+    270px;
+
+  margin:
+    auto;
+
+  border-radius:
+    105px 105px 10px 10px;
 
   background:
     linear-gradient(
@@ -492,312 +939,586 @@ h2 i{
       #8b6650
     );
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:
+    flex;
 
-  color:#fff;
+  align-items:
+    center;
 
-  font-family:"Playfair Display",serif;
-  font-size:90px;
+  justify-content:
+    center;
 
-  box-shadow:0 18px 40px rgba(25,45,38,.12);
+  color:
+    #fff;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    90px;
+
+  box-shadow:
+    0 18px 40px
+    rgba(25,45,38,.12);
 }
 
 
-/* =========================
+/* =========================================================
    EVENTS
-========================= */
+========================================================= */
 
-.events{
-  background:#f2ecdf;
+.events {
+
+  background:
+    #f2ecdf;
 }
 
-.event-list{
-  max-width:800px;
-  margin:35px auto;
+
+.event-list {
+
+  max-width:
+    800px;
+
+  margin:
+    35px auto;
 }
 
-.event-card{
-  display:grid;
-  grid-template-columns:60px 1fr 40px;
 
-  position:relative;
+.event-card {
 
-  gap:20px;
+  display:
+    grid;
 
-  padding:25px 10px;
+  grid-template-columns:
+    60px 1fr 40px;
 
-  border-top:1px solid rgba(23,60,50,.15);
+  position:
+    relative;
 
-  cursor:pointer;
+  gap:
+    20px;
 
-  transition:.25s;
+  padding:
+    25px 10px;
+
+  border-top:
+    1px solid
+    rgba(23,60,50,.15);
+
+  cursor:
+    pointer;
+
+  transition:
+    .25s;
 }
 
-.event-card:last-child{
-  border-bottom:1px solid rgba(23,60,50,.15);
+
+.event-card:last-child {
+
+  border-bottom:
+    1px solid
+    rgba(23,60,50,.15);
 }
 
-.event-card:hover{
-  padding-left:20px;
+
+.event-card:hover {
+
+  padding-left:
+    20px;
 }
 
-.event-icon{
-  width:48px;
-  height:48px;
 
-  border:1px solid var(--gold);
-  border-radius:50%;
+.event-icon {
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:
+    48px;
 
-  color:var(--gold);
+  height:
+    48px;
 
-  font-size:20px;
+  border:
+    1px solid
+    var(--gold);
+
+  border-radius:
+    50%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  color:
+    var(--gold);
+
+  font-size:
+    20px;
 }
 
-.event-card h3{
-  font-family:"Playfair Display",serif;
 
-  font-size:31px;
-  font-weight:400;
+.event-card h3 {
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    31px;
+
+  font-weight:
+    400;
 }
 
-.event-card .urdu{
-  font-size:21px;
-  line-height:2.15;
-  min-height:2.6em;
+
+/* EVENT URDU */
+
+.event-urdu {
+
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  color:
+    var(--ink) !important;
+
+  font-size:
+    22px !important;
+
+  line-height:
+    2.7 !important;
+
+  text-align:
+    left !important;
+
+  min-height:
+    70px !important;
+
+  padding:
+    2px 0 !important;
 }
+
 
 .event-card span,
-.event-card strong{
-  display:block;
+.event-card strong {
 
-  font-size:14px;
+  display:
+    block;
 
-  color:var(--muted);
+  font-size:
+    14px;
 
-  margin-top:5px;
-}
+  color:
+    var(--muted);
 
-.event-card strong{
-  color:var(--ink);
-}
-
-.event-more{
-  border:0;
-  background:none;
-
-  font-size:25px;
-
-  color:var(--gold);
-
-  cursor:pointer;
-}
-
-.event-details{
-  grid-column:2/4;
-
-  display:none;
-
-  padding:5px 0 0;
-
-  font-size:16px;
-
-  color:#667069;
-}
-
-.event-card.open .event-details{
-  display:block;
+  margin-top:
+    5px;
 }
 
 
-/* =========================
+.event-card strong {
+
+  color:
+    var(--ink);
+}
+
+
+.event-more {
+
+  border:
+    0;
+
+  background:
+    none;
+
+  font-size:
+    25px;
+
+  color:
+    var(--gold);
+
+  cursor:
+    pointer;
+}
+
+
+.event-details {
+
+  grid-column:
+    2/4;
+
+  display:
+    none;
+
+  padding:
+    5px 0 0;
+
+  font-size:
+    16px;
+
+  color:
+    #667069;
+}
+
+
+.event-card.open
+.event-details {
+
+  display:
+    block;
+}
+
+
+/* =========================================================
    COUNTDOWN
-========================= */
+========================================================= */
 
-.countdown{
-  padding:100px 7%;
-}
+.countdown {
 
-.timer{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  gap:20px;
-
-  margin-top:45px;
-}
-
-.timer div{
-  min-width:90px;
-}
-
-.timer strong{
-  font-family:"Playfair Display",serif;
-
-  font-size:50px;
-  font-weight:400;
-
-  display:block;
-}
-
-.timer span{
-  font-size:9px;
-  letter-spacing:2px;
-
-  color:var(--gold);
-}
-
-.timer>b{
-  font-weight:400;
-
-  color:var(--gold);
-
-  font-size:30px;
+  padding:
+    100px 7%;
 }
 
 
-/* =========================
+.timer {
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  gap:
+    20px;
+
+  margin-top:
+    45px;
+}
+
+
+.timer div {
+
+  min-width:
+    90px;
+}
+
+
+.timer strong {
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    50px;
+
+  font-weight:
+    400;
+
+  display:
+    block;
+}
+
+
+.timer span {
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    2px;
+
+  color:
+    var(--gold);
+}
+
+
+.timer > b {
+
+  font-weight:
+    400;
+
+  color:
+    var(--gold);
+
+  font-size:
+    30px;
+}
+
+
+/* =========================================================
    DUA
-========================= */
+========================================================= */
 
-.dua{
-  background:#eadfc9;
-  color:var(--green);
-}
+.dua {
 
-.dua-card{
-  max-width:800px;
-  margin:auto;
+  background:
+    #eadfc9;
 
-  padding:60px 25px;
-
-  border:1px solid rgba(201,164,92,.55);
-
-  position:relative;
-}
-
-.dua-card .ornament{
-  font-size:26px;
-}
-
-.dua-card .big{
-  font-size:31px;
-  line-height:2.5;
-
-  min-height:3.2em;
-
-  margin:10px 0;
-  padding:8px 5px;
-}
-
-.dua-card p:last-child{
-  font-size:17px;
-
-  max-width:650px;
-
-  margin:auto;
+  color:
+    var(--green);
 }
 
 
-/* =========================
+.dua-card {
+
+  max-width:
+    800px;
+
+  margin:
+    auto;
+
+  padding:
+    60px 25px;
+
+  border:
+    1px solid
+    rgba(201,164,92,.55);
+
+  position:
+    relative;
+}
+
+
+.dua-card .ornament {
+
+  font-size:
+    26px;
+}
+
+
+/* LARGE URDU DUA */
+
+.dua-urdu {
+
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  color:
+    var(--green) !important;
+
+  font-size:
+    30px !important;
+
+  line-height:
+    3 !important;
+
+  text-align:
+    center !important;
+
+  min-height:
+    150px !important;
+
+  padding:
+    15px 10px !important;
+
+  margin:
+    5px auto !important;
+}
+
+
+.dua-english {
+
+  font-size:
+    17px;
+
+  max-width:
+    650px;
+
+  margin:
+    auto;
+}
+
+
+/* =========================================================
    GALLERY
-========================= */
+========================================================= */
 
-.gallery{
-  text-align:center;
-}
+.gallery {
 
-.photo-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-
-  gap:14px;
-
-  max-width:850px;
-
-  margin:40px auto 10px;
-}
-
-.photo{
-  height:260px;
-
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-
-  padding:20px;
-
-  background:linear-gradient(135deg,#7f9b83,#c9a45c);
-
-  color:#fff;
-
-  font-family:"Playfair Display",serif;
-  font-size:28px;
-
-  position:relative;
-  overflow:hidden;
-}
-
-.photo:after{
-  content:"";
-
-  position:absolute;
-  inset:12px;
-
-  border:1px solid rgba(255,255,255,.4);
-}
-
-.photo span{
-  z-index:1;
-}
-
-.p2{
-  background:linear-gradient(135deg,#8b6c5d,#d2b6a0);
-}
-
-.p3{
-  background:linear-gradient(135deg,#385a50,#a9b78d);
-}
-
-.p4{
-  background:linear-gradient(135deg,#a8895c,#6e5540);
-}
-
-.photo-note{
-  font-size:12px;
-  color:var(--muted);
+  text-align:
+    center;
 }
 
 
-/* =========================
+.photo-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1.1fr .9fr;
+
+  gap:
+    14px;
+
+  max-width:
+    850px;
+
+  margin:
+    40px auto 10px;
+}
+
+
+.photo {
+
+  height:
+    260px;
+
+  display:
+    flex;
+
+  align-items:
+    flex-end;
+
+  justify-content:
+    center;
+
+  padding:
+    20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7f9b83,
+      #c9a45c
+    );
+
+  color:
+    #fff;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    28px;
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+}
+
+
+.photo::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    12px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.4);
+}
+
+
+.photo span {
+
+  z-index:
+    1;
+}
+
+
+.p2 {
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b6c5d,
+      #d2b6a0
+    );
+}
+
+
+.p3 {
+
+  background:
+    linear-gradient(
+      135deg,
+      #385a50,
+      #a9b78d
+    );
+}
+
+
+.p4 {
+
+  background:
+    linear-gradient(
+      135deg,
+      #a8895c,
+      #6e5540
+    );
+}
+
+
+.photo-note {
+
+  font-size:
+    12px;
+
+  color:
+    var(--muted);
+}
+
+
+/* =========================================================
    VENUE
-========================= */
+========================================================= */
 
-.venue{
-  background:#f2ecdf;
+.venue {
+
+  background:
+    #f2ecdf;
 }
 
-.venue-card{
-  max-width:800px;
 
-  margin:35px auto;
+.venue-card {
 
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  max-width:
+    800px;
 
-  background:#fffaf0;
+  margin:
+    35px auto;
 
-  box-shadow:0 15px 40px rgba(25,45,38,.08);
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  background:
+    #fffaf0;
+
+  box-shadow:
+    0 15px 40px
+    rgba(25,45,38,.08);
 }
 
-.map-placeholder{
-  min-height:280px;
+
+.map-placeholder {
+
+  min-height:
+    280px;
 
   background:
     radial-gradient(
@@ -807,433 +1528,754 @@ h2 i{
     ),
     #234c40;
 
-  background-size:16px 16px;
+  background-size:
+    16px 16px;
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  display:
+    flex;
 
-  color:#fff;
-}
+  flex-direction:
+    column;
 
-.map-placeholder span{
-  font-size:45px;
-  color:var(--gold);
-}
+  align-items:
+    center;
 
-.map-placeholder small{
-  letter-spacing:5px;
-  margin-top:8px;
-}
+  justify-content:
+    center;
 
-.venue-info{
-  padding:45px;
-}
-
-.venue-info h3{
-  font-family:"Playfair Display",serif;
-
-  font-size:32px;
-  font-weight:400;
-
-  margin-bottom:12px;
-}
-
-.venue-info p{
-  line-height:1.6;
-
-  color:var(--muted);
-
-  margin-bottom:25px;
-}
-
-.outline-btn{
-  display:inline-block;
-
-  text-decoration:none;
-
-  background:none;
-
-  border:1px solid var(--gold);
-
-  color:var(--green);
+  color:
+    #fff;
 }
 
 
-/* =========================
+.map-placeholder span {
+
+  font-size:
+    45px;
+
+  color:
+    var(--gold);
+}
+
+
+.map-placeholder small {
+
+  letter-spacing:
+    5px;
+
+  margin-top:
+    8px;
+}
+
+
+.venue-info {
+
+  padding:
+    45px;
+}
+
+
+.venue-info h3 {
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    32px;
+
+  font-weight:
+    400;
+
+  margin-bottom:
+    12px;
+}
+
+
+.venue-info p {
+
+  line-height:
+    1.6;
+
+  color:
+    var(--muted);
+
+  margin-bottom:
+    25px;
+}
+
+
+.outline-btn {
+
+  display:
+    inline-block;
+
+  text-decoration:
+    none;
+
+  background:
+    none;
+
+  border:
+    1px solid
+    var(--gold);
+
+  color:
+    var(--green);
+}
+
+
+/* =========================================================
    RSVP
-========================= */
+========================================================= */
 
-.rsvp{
-  text-align:center;
-}
+.rsvp {
 
-.rsvp-card{
-  max-width:550px;
-
-  margin:35px auto;
-
-  background:#fffaf0;
-
-  padding:35px;
-
-  text-align:left;
-
-  box-shadow:0 15px 40px rgba(25,45,38,.08);
-}
-
-label{
-  display:block;
-
-  font-size:14px;
-
-  margin-bottom:18px;
-}
-
-input{
-  width:100%;
-
-  margin-top:7px;
-
-  padding:13px;
-
-  border:1px solid #d8d0bd;
-
-  background:#fffdf8;
-
-  font:inherit;
-
-  outline:none;
-}
-
-input:focus{
-  border-color:var(--gold);
-}
-
-.attendance{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
-  gap:8px;
-
-  margin-bottom:18px;
-}
-
-.attend{
-  padding:12px;
-
-  border:1px solid #d8d0bd;
-
-  background:none;
-
-  font-family:inherit;
-
-  cursor:pointer;
-}
-
-.attend.active{
-  border-color:var(--gold);
-
-  background:#efe2c7;
-}
-
-.full{
-  width:100%;
-}
-
-.form-message{
-  font-size:13px;
-
-  text-align:center;
-
-  margin-top:12px;
-
-  color:var(--green);
+  text-align:
+    center;
 }
 
 
-/* =========================
+.rsvp-card {
+
+  max-width:
+    550px;
+
+  margin:
+    35px auto;
+
+  background:
+    #fffaf0;
+
+  padding:
+    35px;
+
+  text-align:
+    left;
+
+  box-shadow:
+    0 15px 40px
+    rgba(25,45,38,.08);
+}
+
+
+label {
+
+  display:
+    block;
+
+  font-size:
+    14px;
+
+  margin-bottom:
+    18px;
+}
+
+
+input {
+
+  width:
+    100%;
+
+  margin-top:
+    7px;
+
+  padding:
+    13px;
+
+  border:
+    1px solid
+    #d8d0bd;
+
+  background:
+    #fffdf8;
+
+  font:
+    inherit;
+
+  outline:
+    none;
+}
+
+
+input:focus {
+
+  border-color:
+    var(--gold);
+}
+
+
+.attendance {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    8px;
+
+  margin-bottom:
+    18px;
+}
+
+
+.attend {
+
+  padding:
+    12px;
+
+  border:
+    1px solid
+    #d8d0bd;
+
+  background:
+    none;
+
+  font-family:
+    inherit;
+
+  cursor:
+    pointer;
+}
+
+
+.attend.active {
+
+  border-color:
+    var(--gold);
+
+  background:
+    #efe2c7;
+}
+
+
+.full {
+
+  width:
+    100%;
+}
+
+
+.form-message {
+
+  font-size:
+    13px;
+
+  text-align:
+    center;
+
+  margin-top:
+    12px;
+
+  color:
+    var(--green);
+}
+
+
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
-footer{
-  padding:80px 25px;
-}
+footer {
 
-footer .urdu.big{
-  font-size:29px;
-  line-height:2.5;
-
-  min-height:3em;
-
-  padding:5px;
-}
-
-footer h2{
-  margin:10px 0;
-
-  font-size:50px;
-}
-
-footer h2 span{
-  color:var(--gold);
-}
-
-footer p:last-of-type{
-  opacity:.6;
-  font-size:13px;
-}
-
-.top-btn{
-  margin-top:25px;
-
-  border:1px solid rgba(255,255,255,.25);
-
-  background:none;
-
-  color:#fff;
-
-  padding:10px 18px;
-
-  cursor:pointer;
-
-  font-family:inherit;
+  padding:
+    80px 25px;
 }
 
 
-/* =========================
+.footer-urdu {
+
+  display:
+    block !important;
+
+  width:
+    100% !important;
+
+  color:
+    #fff9ed !important;
+
+  font-size:
+    29px !important;
+
+  line-height:
+    3 !important;
+
+  text-align:
+    center !important;
+
+  min-height:
+    110px !important;
+
+  padding:
+    10px !important;
+}
+
+
+footer h2 {
+
+  margin:
+    10px 0;
+
+  font-size:
+    50px;
+}
+
+
+footer h2 span {
+
+  color:
+    var(--gold);
+}
+
+
+footer p:last-of-type {
+
+  opacity:
+    .6;
+
+  font-size:
+    13px;
+}
+
+
+.top-btn {
+
+  margin-top:
+    25px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.25);
+
+  background:
+    none;
+
+  color:
+    #fff;
+
+  padding:
+    10px 18px;
+
+  cursor:
+    pointer;
+
+  font-family:
+    inherit;
+}
+
+
+/* =========================================================
    MUSIC
-========================= */
+========================================================= */
 
-.music-btn{
-  position:fixed;
+.music-btn {
 
-  right:20px;
-  top:20px;
+  position:
+    fixed;
 
-  z-index:100;
+  right:
+    20px;
 
-  color:var(--gold);
+  top:
+    20px;
 
-  background:var(--green);
+  z-index:
+    100;
 
-  border:1px solid var(--gold);
+  color:
+    var(--gold);
 
-  width:42px;
-  height:42px;
+  background:
+    var(--green);
 
-  border-radius:50%;
+  border:
+    1px solid
+    var(--gold);
 
-  cursor:pointer;
+  width:
+    42px;
+
+  height:
+    42px;
+
+  border-radius:
+    50%;
+
+  cursor:
+    pointer;
 }
 
-.music-btn.playing{
-  animation:spin 4s linear infinite;
+
+.music-btn.playing {
+
+  animation:
+    spin 4s linear infinite;
 }
 
 
-/* =========================
+/* =========================================================
    PETALS
-========================= */
+========================================================= */
 
-#petals{
-  position:fixed;
+#petals {
 
-  inset:0;
+  position:
+    fixed;
 
-  pointer-events:none;
+  inset:
+    0;
 
-  z-index:50;
+  pointer-events:
+    none;
 
-  overflow:hidden;
-}
+  z-index:
+    50;
 
-.petal{
-  position:absolute;
-
-  top:-20px;
-
-  color:#d6b779;
-
-  font-size:14px;
-
-  animation:fall linear forwards;
-
-  opacity:.75;
+  overflow:
+    hidden;
 }
 
 
-/* =========================
+.petal {
+
+  position:
+    absolute;
+
+  top:
+    -20px;
+
+  color:
+    #d6b779;
+
+  font-size:
+    14px;
+
+  animation:
+    fall linear forwards;
+
+  opacity:
+    .75;
+}
+
+
+/* =========================================================
    REVEAL
-========================= */
+========================================================= */
 
-.reveal{
-  opacity:0;
+.reveal {
 
-  transform:translateY(35px);
+  opacity:
+    0;
+
+  transform:
+    translateY(35px);
 
   transition:
     opacity .8s,
     transform .8s;
 }
 
-.reveal.visible{
-  opacity:1;
-  transform:none;
+
+.reveal.visible {
+
+  opacity:
+    1;
+
+  transform:
+    none;
 }
 
 
-/* =========================
+/* =========================================================
    ANIMATIONS
-========================= */
+========================================================= */
 
-@keyframes pulse{
-  50%{
-    transform:scale(1.15);
-    opacity:.7;
+@keyframes pulse {
+
+  50% {
+
+    transform:
+      scale(1.15);
+
+    opacity:
+      .7;
   }
 }
 
-@keyframes spin{
-  to{
-    transform:rotate(360deg);
+
+@keyframes spin {
+
+  to {
+
+    transform:
+      rotate(360deg);
   }
 }
 
-@keyframes fall{
-  to{
+
+@keyframes fall {
+
+  to {
+
     transform:
       translateY(105vh)
       rotate(360deg);
 
-    opacity:0;
+    opacity:
+      0;
   }
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
-@media(max-width:650px){
+@media (max-width:650px) {
 
-  section{
-    padding:80px 22px;
+  section {
+
+    padding:
+      80px 22px;
   }
 
-  .section-mark{
-    left:22px;
+
+  .section-mark {
+
+    left:
+      22px;
   }
 
-  .names{
-    font-size:57px;
-    gap:10px;
+
+  .hero {
+
+    padding-left:
+      15px;
+
+    padding-right:
+      15px;
   }
 
-  .names b{
-    font-size:38px;
+
+  .hero-urdu {
+
+    font-size:
+      22px !important;
+
+    min-height:
+      75px !important;
   }
 
-  .small{
-    font-size:22px;
-    min-height:2.8em;
+
+  .names {
+
+    font-size:
+      57px;
+
+    gap:
+      10px;
   }
 
-  .names-urdu{
-    font-size:29px;
-    min-height:2.8em;
+
+  .names b {
+
+    font-size:
+      38px;
   }
 
-  .couple-grid{
-    grid-template-columns:1fr;
-    gap:25px;
+
+  .names-urdu {
+
+    font-size:
+      29px !important;
+
+    min-height:
+      90px !important;
   }
 
-  .ampersand{
-    line-height:.6;
+
+  .couple-grid {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      25px;
   }
 
-  .portrait{
-    width:170px;
-    height:220px;
-    font-size:75px;
+
+  .ampersand {
+
+    line-height:
+      .6;
   }
 
-  .person-card .urdu{
-    min-height:2.8em;
+
+  .portrait {
+
+    width:
+      170px;
+
+    height:
+      220px;
+
+    font-size:
+      75px;
   }
 
-  .event-card{
-    grid-template-columns:48px 1fr 25px;
 
-    gap:12px;
+  .person-urdu {
+
+    min-height:
+      75px !important;
   }
 
-  .event-card h3{
-    font-size:27px;
+
+  .event-card {
+
+    grid-template-columns:
+      48px 1fr 25px;
+
+    gap:
+      12px;
   }
 
-  .event-card .urdu{
-    min-height:2.8em;
+
+  .event-card h3 {
+
+    font-size:
+      27px;
   }
 
-  .event-details{
-    grid-column:2/4;
+
+  .event-urdu {
+
+    font-size:
+      21px !important;
+
+    min-height:
+      70px !important;
   }
 
-  .timer{
-    gap:7px;
+
+  .event-details {
+
+    grid-column:
+      2/4;
   }
 
-  .timer div{
-    min-width:65px;
+
+  .timer {
+
+    gap:
+      7px;
   }
 
-  .timer strong{
-    font-size:34px;
+
+  .timer div {
+
+    min-width:
+      65px;
   }
 
-  .timer>b{
-    font-size:20px;
+
+  .timer strong {
+
+    font-size:
+      34px;
   }
 
-  .photo-grid{
-    grid-template-columns:1fr 1fr;
+
+  .timer > b {
+
+    font-size:
+      20px;
   }
 
-  .photo{
-    height:180px;
-    font-size:22px;
+
+  .photo-grid {
+
+    grid-template-columns:
+      1fr 1fr;
   }
 
-  .venue-card{
-    grid-template-columns:1fr;
+
+  .photo {
+
+    height:
+      180px;
+
+    font-size:
+      22px;
   }
 
-  .map-placeholder{
-    min-height:190px;
+
+  .venue-card {
+
+    grid-template-columns:
+      1fr;
   }
 
-  .venue-info{
-    padding:30px;
+
+  .map-placeholder {
+
+    min-height:
+      190px;
   }
 
-  .attendance{
-    grid-template-columns:1fr;
+
+  .venue-info {
+
+    padding:
+      30px;
   }
 
-  .dua-card{
-    padding:45px 18px;
+
+  .attendance {
+
+    grid-template-columns:
+      1fr;
   }
 
-  .dua-card .big{
-    font-size:25px;
-    line-height:2.6;
+
+  .dua-card {
+
+    padding:
+      45px 18px;
   }
 
-  footer .urdu.big{
-    font-size:25px;
-    line-height:2.6;
+
+  .dua-urdu {
+
+    font-size:
+      24px !important;
+
+    line-height:
+      3 !important;
+
+    min-height:
+      170px !important;
+  }
+
+
+  .footer-urdu {
+
+    font-size:
+      24px !important;
+
+    min-height:
+      105px !important;
+  }
+
+
+  .language-text.urdu-mode {
+
+    font-size:
+      19px !important;
+
+    min-height:
+      140px !important;
   }
 }
